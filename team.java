@@ -47,7 +47,7 @@ while(! (t.round_score==2 | this.round_score==2))
 {
     int t2_w = pick_random_weapon();
     int t1_w = pick_random_weapon();
-   // System.out.println(t1_w + " "+ t2_w);
+    //System.out.println(t1_w + " "+ t2_w);
     switch(t1_w)
     {
       case 0:
@@ -57,10 +57,11 @@ while(! (t.round_score==2 | this.round_score==2))
       if(t2_w==0 && tr1.flag==false)
       {
         tr2 = (rock)t.weapon_list.get(t2_w);
-        //System.out.println("r v r FIGHT");
-        
+        //
         if (tr2.flag==false)
         {
+        //System.out.println("r v r FIGHT");
+          
         if(tr2.battle(tr1) )
           this.round_score++;
         else
@@ -72,9 +73,10 @@ while(! (t.round_score==2 | this.round_score==2))
       if(t2_w==1 && tr1.flag==false)
       {
         tp2 = (paper)t.weapon_list.get(t2_w);
-        //System.out.println("r v p FIGHT");
+        //
         if (tp2.flag == false )
         {
+        //System.out.println("r v p FIGHT");  
         if(tr1.battle(tp2) )
           this.round_score++;
         else
@@ -87,9 +89,10 @@ while(! (t.round_score==2 | this.round_score==2))
       if(t2_w==2 && tr1.flag==false)
       {
         ts2 = (scissors)t.weapon_list.get(t2_w);
-        //System.out.println("r v s FIGHT");
+        //
         if(ts2.flag == false )
         {
+        //System.out.println("r v s FIGHT");  
         if(  tr1.battle(ts2))
           this.round_score++;
         else
@@ -108,9 +111,10 @@ while(! (t.round_score==2 | this.round_score==2))
       if(tp1.flag == false & t2_w==0 )
       {
         tr2 = (rock)t.weapon_list.get(t2_w);
-        //System.out.println("p v r FIGHT");
+        //
         if(tr2.flag==false )
         {
+        //System.out.println("p v r FIGHT");  
         if(tr2.battle(tp1))
           this.round_score++;
         else
@@ -122,9 +126,10 @@ while(! (t.round_score==2 | this.round_score==2))
       if(tp1.flag == false & t2_w==1)
       {
         tp2 = (paper)t.weapon_list.get(t2_w);
-        //System.out.println("p v p FIGHT");
+        //
         if (tp2.flag==false)
         {
+        //System.out.println("p v p FIGHT");  
         if(tp1.battle(tp2) )
           this.round_score++;
         else
@@ -137,9 +142,10 @@ while(! (t.round_score==2 | this.round_score==2))
       if(tp1.flag == false & t2_w==2)
       {
         ts2 = (scissors)t.weapon_list.get(t2_w);
-        //System.out.println("p v s FIGHT");
+        //
         if(ts2.flag==false)
         {
+        //System.out.println("p v s FIGHT");  
         if( tp1.battle(ts2))
           this.round_score++;
         else
@@ -155,9 +161,10 @@ while(! (t.round_score==2 | this.round_score==2))
       if(t2_w==0 && ts1.flag==false)
       {
         tr2 = (rock)t.weapon_list.get(t2_w);
-        //System.out.println("s v r FIGHT");
+        //
         if (tr2.flag==false)
         {
+        //System.out.println("s v r FIGHT");  
         if( tr2.battle(ts1) )
           this.round_score++;
         else
@@ -184,9 +191,10 @@ while(! (t.round_score==2 | this.round_score==2))
       if(t2_w==2 && ts1.flag==false)
       {
         ts2 = (scissors)t.weapon_list.get(t2_w);
-        //System.out.println("s v s FIGHT"); 
+        //
         if(ts2.flag == false)
         {
+        //System.out.println("s v s FIGHT");   
         if( ts1.battle(ts2)  )
           this.round_score++;
         else
@@ -213,6 +221,7 @@ while(! (t.round_score==2 | this.round_score==2))
     System.out.println("TEAM "+this.name+" won this round " + this.round_score+" to "+t.round_score );
     this.score++;
     this.reset_round(t);
+
     return true;
   }
     }
@@ -221,6 +230,7 @@ while(! (t.round_score==2 | this.round_score==2))
     public void reset_round(team t)
     {
       this.round_score = 0;
+      t.round_score=0;
       rock r = new rock("rock");
       paper p = new paper("paper");
       scissors s = new scissors("scissors");

@@ -9,6 +9,7 @@ public class rock extends weapon
      
    this.name = new String(name);
    this.strength=0;
+   flag = false;
    }
  
    public String get_name()
@@ -31,20 +32,26 @@ public class rock extends weapon
       else return true;
    }
 
-   //rock always loses against paper
    public  boolean battle(paper p)
    {
-      this.set_strength(this.get_strength()/2);
-      p.set_strength(p.get_strength()*2);
+    //  this.set_strength(this.get_strength()/2);
+    //  p.set_strength(p.get_strength()*2);
+    if (this.get_strength()/2 > p.get_strength()*2)
+      return true;
+      else
       return false;
+      
    }
 
-   //rock always wins against scissors
    public  boolean battle(scissors s)
    {
-      this.set_strength(this.get_strength()*2);
-      s.set_strength(s.get_strength()/2);
+      //this.set_strength(this.get_strength()*2);
+     // s.set_strength(s.get_strength()/2);
+    if (2*this.get_strength() > s.get_strength()/2)
       return true;
+      else
+      return false;
+      
    }
   
 }

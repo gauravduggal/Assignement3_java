@@ -34,18 +34,25 @@ public class paper extends weapon
    }
 
    //paper always wins against rock
-   public  boolean battle(rock p)
+   public  boolean battle(rock r)
    {
-      this.set_strength(this.get_strength()*2);
-      p.set_strength(p.get_strength()/2);
+      //this.set_strength(this.get_strength()*2);
+     // p.set_strength(p.get_strength()/2);
+     // return true;
+    if (2*this.get_strength() > r.get_strength()/2)
       return true;
+      else
+      return false;
    }
 
-   //paper always loses against scissors
    public  boolean battle(scissors s)
    {
-      this.set_strength(this.get_strength()/2);
-      s.set_strength(s.get_strength()*2);
+     // this.set_strength(this.get_strength()/2);
+     // s.set_strength(s.get_strength()*2);
+     // return false;
+    if (this.get_strength()/2 > s.get_strength()*2)
+      return true;
+      else
       return false;
    }
 
